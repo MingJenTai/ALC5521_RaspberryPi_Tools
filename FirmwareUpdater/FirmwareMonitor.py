@@ -70,6 +70,7 @@ class MySyncHandler(FileSystemEventHandler):
             os.system( "aplay ./Firmware_updating.wav" )
             cmd = "./FirmwareUpdater %s" % firmwarePath
             display( cmd )
+            os.system( cmd )
             os.system( "aplay ./Update_complete.wav" )
         else:
             print "Not found %s" % firmwarePath
