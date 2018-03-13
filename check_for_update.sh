@@ -2,8 +2,6 @@
 
 while true; do
   if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
-    break
-  else
     UPSTREAM=${1:-'@{u}'}
     LOCAL=$(git rev-parse @)
     REMOTE=$(git rev-parse "$UPSTREAM")
@@ -19,6 +17,9 @@ while true; do
     else
         echo "Diverged"
     fi
+    break
+  else
+    echo "Connecting to network..."
   fi
 done
 
