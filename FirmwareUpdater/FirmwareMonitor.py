@@ -68,6 +68,9 @@ class MySyncHandler(FileSystemEventHandler):
             print "Found %s" % firmwarePath
             os.system( "aplay ./Firmware_found.wav" )
             os.system( "aplay ./Firmware_updating.wav" )
+            cmd = "sudo killall WakewordRecognizer"
+            display( cmd )
+            os.system( cmd )
             cmd = "./FirmwareUpdater %s" % firmwarePath
             display( cmd )
             os.system( cmd )
