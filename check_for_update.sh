@@ -11,7 +11,9 @@ while true; do
         echo "Up-to-date"
     elif [ $LOCAL = $BASE ]; then
         echo "Need to pull"
+        aplay ./Updating.wav
         git pull
+        aplay ./Update_complete.wav
     elif [ $REMOTE = $BASE ]; then
         echo "Need to push"
     else
