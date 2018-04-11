@@ -14,6 +14,7 @@ while true; do
         aplay ./Updating.wav
         git pull
         aplay ./Update_complete.wav
+        sudo reboot
     elif [ $REMOTE = $BASE ]; then
         echo "Need to push"
     else
